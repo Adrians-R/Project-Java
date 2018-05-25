@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="370" pageHeight="842" columnWidth="330" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" isIgnorePagination="true" uuid="9b197b4c-8b67-4931-9cfc-3763d6ce84aa">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="parameter1" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT * FROM view_struk WHERE kd_pretransaksi = $P{parameter1}]]>
+	</queryString>
+	<field name="kd_pretransaksi" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="kd_transaksi" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nama_obt" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="jumlah_obt" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tgl_beli" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nama_pg" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="total_harga" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="70" splitType="Stretch">
+			<staticText>
+				<reportElement x="60" y="11" width="226" height="33" uuid="049393cd-e45c-439e-ae0e-530dfb9de0eb"/>
+				<textElement>
+					<font size="24"/>
+				</textElement>
+				<text><![CDATA[Klinik Indah Jaya]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="57" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="82" height="20" uuid="01b6919c-ec3e-4fdf-ae36-6227321b303d"/>
+				<text><![CDATA[No STRUK        :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="99" y="2" width="100" height="20" uuid="6f9d648d-b0fe-4b9b-8a36-670d5d7285f2"/>
+				<textFieldExpression><![CDATA[$F{kd_pretransaksi}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="-1" y="37" width="83" height="20" uuid="4a99d47d-4e21-4819-a7f7-743d0c024108"/>
+				<text><![CDATA[Nama Obat]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="126" y="37" width="100" height="20" uuid="9fd4b459-a658-4376-9bf8-03621d5fffd5"/>
+				<text><![CDATA[QTY]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="99" y="20" width="100" height="20" uuid="8e5c0d5c-483b-4a76-b360-9f387792752c"/>
+				<textFieldExpression><![CDATA[$F{nama_pg}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="20" width="82" height="20" uuid="0d831a61-b543-4ac4-b41f-0a612c1b2851"/>
+				<text><![CDATA[Nama Pembeli :]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="223" y="2" width="48" height="20" uuid="ae33d96d-538c-4c68-9fbe-103f558f9725"/>
+				<text><![CDATA[Tanggal :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="271" y="0" width="59" height="20" uuid="10fce7d3-ec36-488f-95ce-67db945ab8b8"/>
+				<textFieldExpression><![CDATA[$F{tgl_beli}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="126" y="0" width="100" height="20" uuid="72e26e76-df4b-4f11-ae39-57c55d909038"/>
+				<textFieldExpression><![CDATA[$F{jumlah_obt}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="0" width="100" height="20" uuid="39c7d4cf-6ea7-4183-869f-91d52767d5d7"/>
+				<textFieldExpression><![CDATA[$F{nama_obt}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="44" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="0" width="330" height="1" uuid="aee777f4-94ea-4811-a450-de459ce5154e"/>
+			</line>
+			<textField>
+				<reportElement x="253" y="11" width="77" height="20" uuid="576b8897-656e-415f-9881-5837f0f05677"/>
+				<textFieldExpression><![CDATA[$F{total_harga}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="210" y="11" width="43" height="20" uuid="2b80de59-ca17-4d8f-b1f6-b84b1ff61bfa"/>
+				<text><![CDATA[Total :]]></text>
+			</staticText>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

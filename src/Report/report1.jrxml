@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="300" pageHeight="300" columnWidth="260" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="4bb2a572-8a45-43e8-a53e-31a5d6c02a5b">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT * FROM rview]]>
+	</queryString>
+	<field name="kd_transaksi" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nama_pg" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nama_obt" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tgl_beli" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="harga_obat" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="jumlah_obt" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="jenis_obt" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="harga_obt" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="43" height="20" uuid="fe9f3c5e-9e29-4b10-b623-13562ee880f6"/>
+				<textFieldExpression><![CDATA[$F{kd_transaksi}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="56" y="0" width="77" height="20" uuid="975ee30e-40a3-4a15-ae2f-7dece9e4ac15"/>
+				<textFieldExpression><![CDATA[$F{nama_pg}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="187" y="0" width="73" height="20" uuid="aba3ee29-03f0-4ee8-8ee4-2f6509448341"/>
+				<textFieldExpression><![CDATA[$F{tgl_beli}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="60" splitType="Stretch">
+			<textField>
+				<reportElement x="5" y="34" width="58" height="19" uuid="111b3f21-9158-45b4-8cf1-8541392584d5"/>
+				<textFieldExpression><![CDATA[$F{nama_obt}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="227" y="34" width="28" height="18" uuid="4124ada5-940c-40bb-8e12-dd660f835fa1"/>
+				<textFieldExpression><![CDATA[$F{harga_obt}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="82" y="34" width="19" height="19" uuid="6ac56ae1-b7b4-4705-bbcb-61af4c7788c9"/>
+				<textFieldExpression><![CDATA[$F{jumlah_obt}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="133" y="35" width="69" height="18" uuid="82efeb9d-dbe9-4775-854a-e408e96d8b1c"/>
+				<textFieldExpression><![CDATA[$F{jenis_obt}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="5" y="14" width="58" height="20" uuid="424b0190-b4aa-4c89-8dfc-53c3166c34ff"/>
+				<text><![CDATA[Nama Obat]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="82" y="14" width="42" height="20" uuid="c21ffb19-8754-4cbe-b216-6687f6b59cf0"/>
+				<text><![CDATA[Jumlah]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="133" y="14" width="69" height="20" uuid="1dd1ec57-67da-4d12-9071-489d5bf67b9f"/>
+				<text><![CDATA[Jenis Obat]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="227" y="14" width="33" height="20" uuid="721c0abe-91f7-41df-b04e-6a976811ff25"/>
+				<text><![CDATA[Harga]]></text>
+			</staticText>
+			<line>
+				<reportElement x="5" y="1" width="255" height="1" uuid="5e18a839-3fdc-44d3-88aa-2a06be4efa58"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="49" splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band height="47" splitType="Stretch">
+			<staticText>
+				<reportElement x="149" y="27" width="38" height="20" uuid="45ce7304-a1a4-450a-a837-324389ce87b6"/>
+				<text><![CDATA[Total :]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="187" y="27" width="73" height="20" uuid="bb8887c1-8033-4e50-8be0-aa2efcbf06be"/>
+				<textFieldExpression><![CDATA[$F{harga_obat}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
